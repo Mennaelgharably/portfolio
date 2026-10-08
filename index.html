@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menna Tullah Mohamed | AI &amp; Software Engineering Student</title>
+<meta name="description" content="Communications &amp; Electronics engineering student at Alexandria University building RAG and agentic AI systems. Seeking an AI internship.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#projects">Skip to projects</a>
+
+<header class="top">
+  <a class="brand" href="#top">Menna Tullah Mohamed</a>
+  <nav aria-label="Sections">
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <svg class="wave" viewBox="0 0 900 120" preserveAspectRatio="none" aria-hidden="true">
+      <path class="noise" d="M0 60 L15 48 L30 74 L45 40 L60 80 L75 36 L90 70 L105 30 L120 84 L135 42 L150 76 L165 28 L180 82 L195 38 L210 72 L225 34 L240 78 L255 44 L270 70 L285 32 L300 80 L315 40 L330 74 L345 36 L360 76 L375 46 L390 68 L405 38 L420 78"/>
+      <path class="clean" pathLength="1" d="M0 60 C75 -20 150 -20 225 60 S375 140 450 60 S600 -20 675 60 S825 140 900 60"/>
+    </svg>
+    <h1>AI systems that show their evidence.</h1>
+    <p class="lead">I'm Menna, a Communications &amp; Electronics engineering student at Alexandria University (graduating 2027). I build retrieval-augmented and agentic AI applications that cite their sources and refuse to guess.</p>
+    <p class="actions">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="Menna_Tullah_Mohamed_CV.pdf" download>Download CV</a>
+    </p>
+    <p class="status">Seeking an AI internship. Open to relocation to Cairo / Giza.</p>
+  </section>
+
+  <section id="projects" aria-labelledby="h-projects">
+    <h2 id="h-projects">Projects</h2>
+
+    <article class="project">
+      <header>
+        <h3>Medical Guideline Q&amp;A</h3>
+        <p class="kicker">Hybrid RAG for clinical decision support. Built for the AI Hackathon, Aug 2026.</p>
+      </header>
+      <dl>
+        <dt>Problem</dt>
+        <dd>Clinical questions need answers tied to real guidelines. The system answers only from uploaded medical guideline PDFs and declines when the evidence is weak.</dd>
+        <dt>What I built</dt>
+        <dd>
+          <ul>
+            <li>Hybrid retrieval combining FAISS (PubMedBERT embeddings) and BM25, fused with Reciprocal Rank Fusion.</li>
+            <li>A confidence gate that refuses to answer before any LLM call when retrieval evidence is weak.</li>
+            <li>Grounded generation (Groq gpt-oss-120b) with numbered citations mapped to verified document, page, and section metadata.</li>
+            <li>Automated evaluation (Citation Accuracy, Precision@k, Faithfulness) and a Streamlit UI for PDF upload and Q&amp;A.</li>
+          </ul>
+        </dd>
+        <dt>Stack</dt>
+        <dd class="tags"><span>Python</span><span>FAISS</span><span>BM25</span><span>PubMedBERT</span><span>Groq</span><span>Streamlit</span></dd>
+      </dl>
+      <p class="links"><a href="https://github.com/Mennaelgharably/Medical_Rag_forAiHackathon" rel="noopener">GitHub repository</a></p>
+    </article>
+
+    <article class="project">
+      <header>
+        <h3>Document Intelligence System</h3>
+        <p class="kicker">Multi-format RAG Q&amp;A app. Capstone for the Tips Hindawi Challenge, Jun–Jul 2026.</p>
+      </header>
+      <dl>
+        <dt>Problem</dt>
+        <dd>Answering questions from PDF, DOCX, and TXT files with answers that point back to their sources.</dd>
+        <dt>What I built</dt>
+        <dd>
+          <ul>
+            <li>A full RAG pipeline with column-aware PDF extraction, local MiniLM embeddings, and FAISS vector search.</li>
+            <li>Dynamic retrieval sizing and context expansion around strong matches.</li>
+            <li>Grounded answers (Llama 3.3 70B via Groq) with full source citations.</li>
+            <li>Deployed as a free, public Streamlit web app.</li>
+          </ul>
+        </dd>
+        <dt>Stack</dt>
+        <dd class="tags"><span>Python</span><span>FAISS</span><span>MiniLM</span><span>Groq</span><span>Streamlit</span></dd>
+      </dl>
+      <p class="links">
+        <a href="https://doc-intelligence-app-rcsgyteuhpzdwd9f5jo6iu.streamlit.app/" rel="noopener">Live demo</a>
+        <a href="https://github.com/Mennaelgharably/doc-intelligence-app" rel="noopener">GitHub repository</a>
+      </p>
+    </article>
+
+    <div class="pair">
+      <article class="project small">
+        <h3>DriverGuard</h3>
+        <p class="kicker">Real-time driver safety system</p>
+        <p>Detects eye closure and head pose on a live camera feed using probability thresholds and time-based logic, with audio alerts and visual overlays for drowsiness and distraction. Sub-second response.</p>
+        <p class="tags"><span>Google ML Kit</span><span>Canvas API</span><span>Android</span></p>
+        <!-- TODO: add GitHub repo and demo video links when available -->
+      </article>
+      <article class="project small">
+        <h3>Movie Recommender System</h3>
+        <p class="kicker">Content-based filtering</p>
+        <p>Recommendation engine over 5,000+ records using feature vectorization and cosine similarity, with a full preprocessing pipeline: cleaning, normalization, encoding, and feature selection.</p>
+        <p class="tags"><span>Python</span><span>Pandas</span><span>Scikit-learn</span></p>
+        <!-- TODO: add GitHub repo link when available -->
+      </article>
+    </div>
+  </section>
+
+  <section id="experience" aria-labelledby="h-exp">
+    <h2 id="h-exp">Experience and training</h2>
+    <ol class="timeline">
+      <li>
+        <p class="when">Jul 2026 – Present</p>
+        <h3>Trainee, Agentic AI &amp; Generative AI System Developer, DEPI</h3>
+        <p>Six-month hybrid program covering Transformers and LLM internals, advanced prompting, Hugging Face and open LLMs, RAG and memory systems, multi-agent systems, app and UI development, and deployment and monitoring. Working toward a capstone project.</p>
+      </li>
+      <li>
+        <p class="when">Aug 2026</p>
+        <h3>AI Hackathon, Orange Digital Center × ITIDA × TIEC × Creativa × Instant</h3>
+        <p>Five-day hackathon. Built the Medical Guideline Q&amp;A system under a rubric covering retrieval quality, citation accuracy, and safety.</p>
+      </li>
+      <li>
+        <p class="when">Jun – Jul 2026</p>
+        <h3>LLM Program Trainee, Tips Hindawi (Edrak for AI)</h3>
+        <p>Remote program on LLM fundamentals, prompt engineering, RAG and embeddings, and AI-powered chatbots and assistants. Delivered the Document Intelligence System as the challenge capstone.</p>
+      </li>
+      <li>
+        <p class="when">Aug – Sep 2025</p>
+        <h3>Front-End Developer Intern, National Telecommunication Institute (NTI)</h3>
+        <p>Built responsive interfaces with HTML, CSS, JavaScript, and Bootstrap, using Git for version control.</p>
+      </li>
+      <li>
+        <p class="when">Jul 2025</p>
+        <h3>Machine Learning Trainee, National Telecommunication Institute (NTI)</h3>
+        <p>Data preprocessing, exploratory analysis, feature engineering, and supervised model building and evaluation with Python, Pandas, NumPy, and Scikit-learn, including end-to-end ML pipelines.</p>
+      </li>
+      <li>
+        <p class="when">Part-time</p>
+        <h3>Customer Service Agent, VOIS</h3>
+        <p>Support for UK-based clients, building advanced English and professional communication skills.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="skills" aria-labelledby="h-skills">
+    <h2 id="h-skills">Skills</h2>
+    <dl class="skills">
+      <dt>AI &amp; machine learning</dt>
+      <dd>Generative AI, agentic and multi-agent systems, RAG, LLM applications, prompt engineering, supervised and unsupervised learning, deep learning, computer vision, NLP fundamentals</dd>
+      <dt>GenAI tooling</dt>
+      <dd>LangChain, FAISS, BM25, vector databases, Hugging Face, Groq API, Streamlit</dd>
+      <dt>Data science</dt>
+      <dd>NumPy, Pandas, Scikit-learn, Matplotlib</dd>
+      <dt>Languages</dt>
+      <dd>Python (primary), C/C++</dd>
+      <dt>Tools</dt>
+      <dd>Git, GitHub, GitHub Actions</dd>
+      <dt>Web &amp; mobile</dt>
+      <dd>HTML, CSS, Bootstrap, Android SDK, Android Studio</dd>
+    </dl>
+  </section>
+
+  <section id="about" aria-labelledby="h-about">
+    <h2 id="h-about">About</h2>
+    <div class="prose">
+      <p>Communications engineering is about recovering a clean signal from a noisy channel and being able to prove it worked. I bring the same habit to language models: retrieve the right evidence, ground every answer in it, and say "I don't know" when the signal is too weak.</p>
+      <p>My degree gives me a solid base in linear algebra, probability and statistics, calculus, and digital signal processing, which is why I like understanding how a system behaves instead of only wiring tools together. I'm now going deeper into agentic AI and generative AI systems through DEPI and building projects that I deploy and test.</p>
+    </div>
+
+    <h3 class="sub">Education</h3>
+    <ul class="plain">
+      <li><strong>B.Sc. Electrical Engineering, Communications &amp; Electronics</strong>, Alexandria University. Expected 2027. Coursework: Linear Algebra, Probability &amp; Statistics, Calculus, Digital Signal Processing, Data Structures &amp; Algorithms, C Programming.</li>
+      <li><strong>High School Diploma</strong>, New Sedi-Gaber Language School. 92.3%, ranked 2nd in class.</li>
+    </ul>
+
+    <h3 class="sub">Certifications</h3>
+    <ul class="plain">
+      <li>NVIDIA DLI: Generative AI Fundamentals, ITI (35 hrs)</li>
+      <li>Getting Started with Deep Learning, NVIDIA</li>
+      <li>Python for Data Science, Maharah-Tech</li>
+    </ul>
+
+    <h3 class="sub">Leadership and volunteering</h3>
+    <ul class="plain">
+      <li>Class Representative, Faculty of Engineering, Alexandria University.</li>
+      <li>Event organizer and volunteer: co-organized the 2023 Graduation Ceremony for 500+ students; supported Orphans' Day (2023, 2024) and Ramadan Iftar (2022, 2023) events with 100+ participants.</li>
+      <li>PR Member, The Chairman, SMU (2023). Training Staff, Mind Juniors, SMU (2023). Delegate, MAU, Bibliotheca Alexandrina (2019).</li>
+    </ul>
+    <p class="muted">Languages: Arabic (native), English (advanced).</p>
+  </section>
+
+  <section id="contact" aria-labelledby="h-contact">
+    <h2 id="h-contact">Contact</h2>
+    <p class="lead">I'm looking for an AI or generative AI internship. The quickest way to reach me is email.</p>
+    <ul class="contact">
+      <li><a href="mailto:mena2014moh@gmail.com">mena2014moh@gmail.com</a></li>
+      <li><a href="tel:+201211801006">(+20) 1211801006</a></li>
+      <li><a href="https://www.linkedin.com/in/menna-el-gharably" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://github.com/Mennaelgharably" rel="noopener">GitHub</a></li>
+      <li><a href="Menna_Tullah_Mohamed_CV.pdf" download>Download CV (PDF)</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer><p>Menna Tullah Mohamed · Alexandria, Egypt</p></footer>
+</body>
+</html>
